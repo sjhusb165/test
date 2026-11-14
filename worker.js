@@ -35,9 +35,6 @@ export default {
           msg: "后端出错了：" + error.message
         }), { headers });
       }
-    }
-
-    // 4. 兜底：如果是普通打开网页，防止报 1101 错误
-    return new Response("后端运行正常，请用表单提交", { headers });
+    };
   }
 }
