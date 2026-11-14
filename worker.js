@@ -4,8 +4,7 @@ export default {
     const headers = {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
-      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
+   
     };
 
     // 2. 处理浏览器的安检试探（预检请求），直接放行
