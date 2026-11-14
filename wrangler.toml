@@ -1,3 +1,7 @@
-name = "est-ho"
+name = "test-ho"
 main = "worker.js"
 compatibility_date = "2026-11-13"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "luo_test"
