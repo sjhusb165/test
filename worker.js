@@ -1,21 +1,22 @@
 export default {
-async fetch(qian){
+async fetch(e,env) {
 const headers = {
   "Access-Control-Allow-Origin": "*",
-  "Content-Type": "text/plain;charset=UTF-8"
+  "Content-Type": "application/json"
 };
-const url = new URL (qian.url);
-if (url.pathname === "/gree") {
-return new Response ("是绿茶", {headers})
-};
+if (e.method === "POST") {
+const box = await e.json();
 
-if (url.pathname === "/redb") {
-return new Response ("是红茶", {headers})
-};
+await env.DB.prepare(
+"INSERT INTO form_data (drink, reason, gender) VALUES (?, ?, ?)"
+).bind(box.hew, box.why, box.xin).run();
+
+
+return new Response (JSON.stringify({
+
+msg:"已经收到你喜欢的饮品了，感谢您的参与"
   
-if (url.pathname === "/fanb") {
-return new Response ("是方糖", {headers})
-};
-
+}),{headers});
+}
 }
 }
