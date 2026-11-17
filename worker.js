@@ -13,8 +13,8 @@ if (e.method === "POST") {
 const box = await e.json();
 
 await env.DB.prepare(
-"INSERT INTO form_data (drink, reason, gender) VALUES (?, ?, ?)"
-).bind(box.hew, box.why, box.xin).run();
+"INSERT INTO form_data (drink, reason, gender,age) VALUES (?, ?, ?,?)"
+).bind(box.hew, box.why, box.xin,box.nian).run();
 
 
 return new Response (JSON.stringify({
